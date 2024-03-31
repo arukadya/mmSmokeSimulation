@@ -10,6 +10,7 @@
 #import <MetalKit/MetalKit.h>
 #import "ShaderTypes.h"
 #import <simd/simd.h>
+#import "Slab.h"
 
 @interface Renderer : NSObject<MTKViewDelegate>
 

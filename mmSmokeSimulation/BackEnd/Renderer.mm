@@ -1,9 +1,19 @@
 #import "Renderer.h"
+#import <Eigen/Core>
 #import <iostream>
+
+typedef struct RenderArea{
+    int size = 500;
+    Eigen::Vector2f leftdown = {-size,-size};
+    Eigen::Vector2f leftup = {-size,size};
+    Eigen::Vector2f rightdown = {size,-size};
+    Eigen::Vector2f rightup = {size,size};
+};
 
 // Main class performing the rendering
 @implementation Renderer
 {
+    RenderArea renderArea;
     id<MTLDevice> _device;
     id<MTLComputePipelineState> _computePipelineState;
     id<MTLRenderPipelineState> _renderPipelineState;
@@ -12,6 +22,7 @@
     id<MTLCommandQueue> _commandQueue;
     vector_uint2 _viewportSize;
     id<MTLTexture> _outputTexture;
+    Slab *testSlab;
     MTLSize _threadgroupSize;
     MTLSize _threadgroupCount;
 }
@@ -53,7 +64,8 @@
 
         MTLTextureDescriptor *textureDescriptor = [[MTLTextureDescriptor alloc] init];
         textureDescriptor.textureType = MTLTextureType2D;
-        textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
+//        textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
+        textureDescriptor.pixelFormat = MTLPixelFormatRGBA32Float;
 
         textureDescriptor.width = 256;
         textureDescriptor.height = 256;
@@ -74,6 +86,8 @@
 
         // Create the command queue.
         _commandQueue = [_device newCommandQueue];
+        testSlab = [[Slab alloc] makeSlabWithView:mtkView :256 :256 :1];
+        
     }
     return self;
 }
@@ -92,13 +106,21 @@
     static const Vertex quadVertices[] =
     {
         // Pixel positions, Texture coordinates
-        { {  250,  -250 },  { 1.f, 1.f } },
-        { { -250,  -250 },  { 0.f, 1.f } },
-        { { -250,   250 },  { 0.f, 0.f } },
+//        { {  250,  -250 },  { 1.f, 1.f } },
+//        { { -250,  -250 },  { 0.f, 1.f } },
+//        { { -250,   250 },  { 0.f, 0.f } },
+//
+//        { {  250,  -250 },  { 1.f, 1.f } },
+//        { { -250,   250 },  { 0.f, 0.f } },
+//        { {  250,   250 },  { 1.f, 0.f } },
+        
+        { {  renderArea.rightdown.x(), renderArea.rightdown.y()  },  { 1.f, 1.f } },
+        { {  renderArea.leftdown.x(), renderArea.leftdown.y()},  { 0.f, 1.f } },
+        { {  renderArea.leftup.x(),   renderArea.leftup.y() },  { 0.f, 0.f } },
 
-        { {  250,  -250 },  { 1.f, 1.f } },
-        { { -250,   250 },  { 0.f, 0.f } },
-        { {  250,   250 },  { 1.f, 0.f } },
+        { {  renderArea.rightdown.x(), renderArea.rightdown.y()  },  { 1.f, 1.f } },
+        { {  renderArea.leftup.x(),   renderArea.leftup.y() },  { 0.f, 0.f } },
+        { {  renderArea.rightup.x(),   renderArea.rightup.y() },  { 1.f, 0.f } },
     };
 
     // Create a new command buffer for each frame.
@@ -111,7 +133,10 @@
     
     [computeEncoder setComputePipelineState:_computePipelineState];
 
-    [computeEncoder setTexture:_outputTexture
+//    [computeEncoder setTexture:_outputTexture
+//                       atIndex:0];
+//    std::cout << testSlab.source.width << "," << testSlab.source.height << std::endl;
+    [computeEncoder setTexture:testSlab.dest
                        atIndex:0];
     
     [computeEncoder dispatchThreadgroups:_threadgroupCount
@@ -119,6 +144,7 @@
 
     [computeEncoder endEncoding];
 
+    [testSlab swap];
     // Use the output image to draw to the view's drawable texture.
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
 
@@ -145,8 +171,9 @@
                               atIndex:VertexInputIndexViewportSize];
 
         // Encode the output texture from the previous stage.
-        [renderEncoder setFragmentTexture:_outputTexture
-                                  atIndex:TextureIndexOutput];
+//        [renderEncoder setFragmentTexture:_outputTexture
+//                                  atIndex:TextureIndexOutput];
+        [renderEncoder setFragmentTexture:testSlab.dest atIndex:TextureIndexOutput];
 
         // Draw the quad.
         [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle
