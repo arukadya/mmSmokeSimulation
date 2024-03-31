@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Metal shaders used for this sample
-*/
-
 #include <metal_stdlib>
 
 using namespace metal;
@@ -68,10 +61,8 @@ fragment float4 samplingShader(RasterizerData  in           [[stage_in]],
     return float4(colorSample);
 }
 
-// Rec. 709 luma values for grayscale image conversion
-constant half3 kRec709Luma = half3(0.2126, 0.7152, 0.0722);
 
-// Grayscale compute kernel
+// test compute kernel
 kernel void simasima(texture2d<float, access::write> outTexture [[texture(0)]],
                      uint2                          gid        [[thread_position_in_grid]]){
     float4 newValue;

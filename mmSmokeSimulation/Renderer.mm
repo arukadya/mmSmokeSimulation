@@ -33,14 +33,9 @@
         id<MTLFunction> kernelFunction = [defaultLibrary newFunctionWithName:@"simasima"];
         _computePipelineState = [_device newComputePipelineStateWithFunction:kernelFunction
                                                                        error:&error];
-
-        // Compute pipeline state creation could fail if kernelFunction failed to load from
-        // the library. If the Metal API validation is enabled, you automatically get more
-        // information about what went wrong. (Metal API validation is enabled by default
-        // when you run a debug build from Xcode.)
+        
         NSAssert(_computePipelineState, @"Failed to create compute pipeline state: %@", error);
 
-        // Load the vertex and fragment functions, and use them to configure a render
         // pipeline.
         id<MTLFunction> vertexFunction = [defaultLibrary newFunctionWithName:@"vertexShader"];
         id<MTLFunction> fragmentFunction = [defaultLibrary newFunctionWithName:@"samplingShader"];
@@ -56,48 +51,16 @@
 
         NSAssert(_renderPipelineState, @"Failed to create render pipeline state: %@", error);
 
-//        NSURL *imageFileLocation = [[NSBundle mainBundle] URLForResource:@"Image" withExtension:@"tga"];
-
-//        AAPLImage * image = [[AAPLImage alloc] initWithTGAFileAtLocation:imageFileLocation];
-
-//        if(!image)
-//        {
-//            return nil;
-//        }
-
         MTLTextureDescriptor *textureDescriptor = [[MTLTextureDescriptor alloc] init];
         textureDescriptor.textureType = MTLTextureType2D;
-        // Indicate that each pixel has a Blue, Green, Red, and Alpha channel,
-        //   each in an 8-bit unnormalized value (0 maps to 0.0, while 255 maps to 1.0)
         textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
-//        textureDescriptor.width = image.width;
-//        textureDescriptor.height = image.height;
+
         textureDescriptor.width = 256;
         textureDescriptor.height = 256;
-        
-        // The image kernel only needs to read the incoming image data.
-        
-//        textureDescriptor.usage = MTLTextureUsageShaderRead;
-//        _inputTexture = [_device newTextureWithDescriptor:textureDescriptor];
-
-        // The output texture needs to be written by the image kernel and sampled
-        // by the rendering code.
         
         textureDescriptor.usage = MTLTextureUsageShaderWrite | MTLTextureUsageShaderRead ;
         _outputTexture = [_device newTextureWithDescriptor:textureDescriptor];
 
-        MTLRegion region = {{ 0, 0, 0 }, {textureDescriptor.width, textureDescriptor.height, 1}};
-
-        // Calculate the size of each texel times the width of the textures.
-        NSUInteger bytesPerRow = 4 * textureDescriptor.width;
-
-        // Copy the bytes from the data object into the texture.
-//        [_inputTexture replaceRegion:region
-//                    mipmapLevel:0
-//                      withBytes:image.data.bytes
-//                    bytesPerRow:bytesPerRow];
-//
-//        NSAssert(_inputTexture && !error, @"Failed to create inpute texture: %@", error);
 
         // Set the compute kernel's threadgroup size to 16 x 16.
         _threadgroupSize = MTLSizeMake(16, 16, 1);

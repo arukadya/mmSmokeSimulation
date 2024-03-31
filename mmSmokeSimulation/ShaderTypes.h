@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Header containing types and enum constants shared between Metal shaders and C/ObjC source
-*/
-
 #ifndef ShaderTypes_h
 #define ShaderTypes_h
 
