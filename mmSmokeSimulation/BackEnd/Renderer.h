@@ -9,7 +9,7 @@
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h>
 #import "ShaderTypes.h"
-#include <simd/simd.h>
+#import <simd/simd.h>
 
 @interface Renderer : NSObject<MTKViewDelegate>
 
