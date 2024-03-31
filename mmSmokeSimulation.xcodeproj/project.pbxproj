@@ -15,6 +15,11 @@
 		E885A9512BB9519400994666 /* mmSmokeSimulationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A9502BB9519400994666 /* mmSmokeSimulationTests.m */; };
 		E885A95B2BB9519400994666 /* mmSmokeSimulationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A95A2BB9519400994666 /* mmSmokeSimulationUITests.m */; };
 		E885A95D2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A95C2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m */; };
+		E885A96B2BB9542500994666 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E885A96A2BB9542500994666 /* Metal.framework */; };
+		E885A96D2BB9542F00994666 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E885A96C2BB9542F00994666 /* MetalKit.framework */; };
+		E885A96F2BB9543600994666 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E885A96E2BB9543600994666 /* Foundation.framework */; };
+		E885A9712BB9557B00994666 /* Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E885A9702BB9557B00994666 /* Renderer.mm */; };
+		E885A9752BB9567400994666 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = E885A9742BB9567400994666 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,13 @@
 		E885A9562BB9519400994666 /* mmSmokeSimulationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mmSmokeSimulationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E885A95A2BB9519400994666 /* mmSmokeSimulationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mmSmokeSimulationUITests.m; sourceTree = "<group>"; };
 		E885A95C2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mmSmokeSimulationUITestsLaunchTests.m; sourceTree = "<group>"; };
+		E885A96A2BB9542500994666 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		E885A96C2BB9542F00994666 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		E885A96E2BB9543600994666 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E885A9702BB9557B00994666 /* Renderer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Renderer.mm; sourceTree = "<group>"; };
+		E885A9722BB9558D00994666 /* Renderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Renderer.h; sourceTree = "<group>"; };
+		E885A9732BB9560800994666 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		E885A9742BB9567400994666 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E885A96F2BB9543600994666 /* Foundation.framework in Frameworks */,
+				E885A96D2BB9542F00994666 /* MetalKit.framework in Frameworks */,
+				E885A96B2BB9542500994666 /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,7 @@
 				E885A94F2BB9519400994666 /* mmSmokeSimulationTests */,
 				E885A9592BB9519400994666 /* mmSmokeSimulationUITests */,
 				E885A9382BB9519300994666 /* Products */,
+				E885A9692BB9542500994666 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +119,10 @@
 				E885A93B2BB9519300994666 /* AppDelegate.m */,
 				E885A93D2BB9519300994666 /* ViewController.h */,
 				E885A93E2BB9519300994666 /* ViewController.m */,
+				E885A9702BB9557B00994666 /* Renderer.mm */,
+				E885A9722BB9558D00994666 /* Renderer.h */,
+				E885A9732BB9560800994666 /* ShaderTypes.h */,
+				E885A9742BB9567400994666 /* Shaders.metal */,
 				E885A9402BB9519400994666 /* Assets.xcassets */,
 				E885A9422BB9519400994666 /* Main.storyboard */,
 				E885A9452BB9519400994666 /* main.m */,
@@ -126,6 +146,16 @@
 				E885A95C2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m */,
 			);
 			path = mmSmokeSimulationUITests;
+			sourceTree = "<group>";
+		};
+		E885A9692BB9542500994666 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E885A96E2BB9543600994666 /* Foundation.framework */,
+				E885A96C2BB9542F00994666 /* MetalKit.framework */,
+				E885A96A2BB9542500994666 /* Metal.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E885A9712BB9557B00994666 /* Renderer.mm in Sources */,
 				E885A93F2BB9519300994666 /* ViewController.m in Sources */,
 				E885A9462BB9519400994666 /* main.m in Sources */,
 				E885A93C2BB9519300994666 /* AppDelegate.m in Sources */,
+				E885A9752BB9567400994666 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
