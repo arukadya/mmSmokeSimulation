@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E885A93C2BB9519300994666 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A93B2BB9519300994666 /* AppDelegate.m */; };
+		E885A93F2BB9519300994666 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A93E2BB9519300994666 /* ViewController.m */; };
+		E885A9412BB9519400994666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E885A9402BB9519400994666 /* Assets.xcassets */; };
+		E885A9442BB9519400994666 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E885A9432BB9519400994666 /* Base */; };
+		E885A9462BB9519400994666 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A9452BB9519400994666 /* main.m */; };
+		E885A9512BB9519400994666 /* mmSmokeSimulationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A9502BB9519400994666 /* mmSmokeSimulationTests.m */; };
+		E885A95B2BB9519400994666 /* mmSmokeSimulationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A95A2BB9519400994666 /* mmSmokeSimulationUITests.m */; };
+		E885A95D2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A95C2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E885A94D2BB9519400994666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E885A92F2BB9519300994666 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E885A9362BB9519300994666;
+			remoteInfo = mmSmokeSimulation;
+		};
+		E885A9572BB9519400994666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E885A92F2BB9519300994666 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E885A9362BB9519300994666;
+			remoteInfo = mmSmokeSimulation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E885A9372BB9519300994666 /* mmSmokeSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmSmokeSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E885A93A2BB9519300994666 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E885A93B2BB9519300994666 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E885A93D2BB9519300994666 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E885A93E2BB9519300994666 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E885A9402BB9519400994666 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E885A9432BB9519400994666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E885A9452BB9519400994666 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E885A9472BB9519400994666 /* mmSmokeSimulation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mmSmokeSimulation.entitlements; sourceTree = "<group>"; };
+		E885A94C2BB9519400994666 /* mmSmokeSimulationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mmSmokeSimulationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E885A9502BB9519400994666 /* mmSmokeSimulationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mmSmokeSimulationTests.m; sourceTree = "<group>"; };
+		E885A9562BB9519400994666 /* mmSmokeSimulationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mmSmokeSimulationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E885A95A2BB9519400994666 /* mmSmokeSimulationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mmSmokeSimulationUITests.m; sourceTree = "<group>"; };
+		E885A95C2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mmSmokeSimulationUITestsLaunchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E885A9342BB9519300994666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E885A9492BB9519400994666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E885A9532BB9519400994666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E885A92E2BB9519300994666 = {
+			isa = PBXGroup;
+			children = (
+				E885A9392BB9519300994666 /* mmSmokeSimulation */,
+				E885A94F2BB9519400994666 /* mmSmokeSimulationTests */,
+				E885A9592BB9519400994666 /* mmSmokeSimulationUITests */,
+				E885A9382BB9519300994666 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E885A9382BB9519300994666 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E885A9372BB9519300994666 /* mmSmokeSimulation.app */,
+				E885A94C2BB9519400994666 /* mmSmokeSimulationTests.xctest */,
+				E885A9562BB9519400994666 /* mmSmokeSimulationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E885A9392BB9519300994666 /* mmSmokeSimulation */ = {
+			isa = PBXGroup;
+			children = (
+				E885A93A2BB9519300994666 /* AppDelegate.h */,
+				E885A93B2BB9519300994666 /* AppDelegate.m */,
+				E885A93D2BB9519300994666 /* ViewController.h */,
+				E885A93E2BB9519300994666 /* ViewController.m */,
+				E885A9402BB9519400994666 /* Assets.xcassets */,
+				E885A9422BB9519400994666 /* Main.storyboard */,
+				E885A9452BB9519400994666 /* main.m */,
+				E885A9472BB9519400994666 /* mmSmokeSimulation.entitlements */,
+			);
+			path = mmSmokeSimulation;
+			sourceTree = "<group>";
+		};
+		E885A94F2BB9519400994666 /* mmSmokeSimulationTests */ = {
+			isa = PBXGroup;
+			children = (
+				E885A9502BB9519400994666 /* mmSmokeSimulationTests.m */,
+			);
+			path = mmSmokeSimulationTests;
+			sourceTree = "<group>";
+		};
+		E885A9592BB9519400994666 /* mmSmokeSimulationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E885A95A2BB9519400994666 /* mmSmokeSimulationUITests.m */,
+				E885A95C2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m */,
+			);
+			path = mmSmokeSimulationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E885A9362BB9519300994666 /* mmSmokeSimulation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E885A9602BB9519400994666 /* Build configuration list for PBXNativeTarget "mmSmokeSimulation" */;
+			buildPhases = (
+				E885A9332BB9519300994666 /* Sources */,
+				E885A9342BB9519300994666 /* Frameworks */,
+				E885A9352BB9519300994666 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mmSmokeSimulation;
+			productName = mmSmokeSimulation;
+			productReference = E885A9372BB9519300994666 /* mmSmokeSimulation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E885A94B2BB9519400994666 /* mmSmokeSimulationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E885A9632BB9519400994666 /* Build configuration list for PBXNativeTarget "mmSmokeSimulationTests" */;
+			buildPhases = (
+				E885A9482BB9519400994666 /* Sources */,
+				E885A9492BB9519400994666 /* Frameworks */,
+				E885A94A2BB9519400994666 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E885A94E2BB9519400994666 /* PBXTargetDependency */,
+			);
+			name = mmSmokeSimulationTests;
+			productName = mmSmokeSimulationTests;
+			productReference = E885A94C2BB9519400994666 /* mmSmokeSimulationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E885A9552BB9519400994666 /* mmSmokeSimulationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E885A9662BB9519400994666 /* Build configuration list for PBXNativeTarget "mmSmokeSimulationUITests" */;
+			buildPhases = (
+				E885A9522BB9519400994666 /* Sources */,
+				E885A9532BB9519400994666 /* Frameworks */,
+				E885A9542BB9519400994666 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E885A9582BB9519400994666 /* PBXTargetDependency */,
+			);
+			name = mmSmokeSimulationUITests;
+			productName = mmSmokeSimulationUITests;
+			productReference = E885A9562BB9519400994666 /* mmSmokeSimulationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E885A92F2BB9519300994666 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					E885A9362BB9519300994666 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					E885A94B2BB9519400994666 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = E885A9362BB9519300994666;
+					};
+					E885A9552BB9519400994666 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = E885A9362BB9519300994666;
+					};
+				};
+			};
+			buildConfigurationList = E885A9322BB9519300994666 /* Build configuration list for PBXProject "mmSmokeSimulation" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E885A92E2BB9519300994666;
+			productRefGroup = E885A9382BB9519300994666 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E885A9362BB9519300994666 /* mmSmokeSimulation */,
+				E885A94B2BB9519400994666 /* mmSmokeSimulationTests */,
+				E885A9552BB9519400994666 /* mmSmokeSimulationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E885A9352BB9519300994666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E885A9412BB9519400994666 /* Assets.xcassets in Resources */,
+				E885A9442BB9519400994666 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E885A94A2BB9519400994666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E885A9542BB9519400994666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E885A9332BB9519300994666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E885A93F2BB9519300994666 /* ViewController.m in Sources */,
+				E885A9462BB9519400994666 /* main.m in Sources */,
+				E885A93C2BB9519300994666 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E885A9482BB9519400994666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E885A9512BB9519400994666 /* mmSmokeSimulationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E885A9522BB9519400994666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E885A95B2BB9519400994666 /* mmSmokeSimulationUITests.m in Sources */,
+				E885A95D2BB9519400994666 /* mmSmokeSimulationUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E885A94E2BB9519400994666 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E885A9362BB9519300994666 /* mmSmokeSimulation */;
+			targetProxy = E885A94D2BB9519400994666 /* PBXContainerItemProxy */;
+		};
+		E885A9582BB9519400994666 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E885A9362BB9519300994666 /* mmSmokeSimulation */;
+			targetProxy = E885A9572BB9519400994666 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E885A9422BB9519400994666 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E885A9432BB9519400994666 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E885A95E2BB9519400994666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E885A95F2BB9519400994666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E885A9612BB9519400994666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mmSmokeSimulation/mmSmokeSimulation.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UHN7NN92K6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arukadya.mmSmokeSimulation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		E885A9622BB9519400994666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = mmSmokeSimulation/mmSmokeSimulation.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UHN7NN92K6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arukadya.mmSmokeSimulation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		E885A9642BB9519400994666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UHN7NN92K6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arukadya.mmSmokeSimulationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mmSmokeSimulation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mmSmokeSimulation";
+			};
+			name = Debug;
+		};
+		E885A9652BB9519400994666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UHN7NN92K6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arukadya.mmSmokeSimulationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mmSmokeSimulation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mmSmokeSimulation";
+			};
+			name = Release;
+		};
+		E885A9672BB9519400994666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UHN7NN92K6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arukadya.mmSmokeSimulationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_TARGET_NAME = mmSmokeSimulation;
+			};
+			name = Debug;
+		};
+		E885A9682BB9519400994666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UHN7NN92K6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arukadya.mmSmokeSimulationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_TARGET_NAME = mmSmokeSimulation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E885A9322BB9519300994666 /* Build configuration list for PBXProject "mmSmokeSimulation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E885A95E2BB9519400994666 /* Debug */,
+				E885A95F2BB9519400994666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E885A9602BB9519400994666 /* Build configuration list for PBXNativeTarget "mmSmokeSimulation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E885A9612BB9519400994666 /* Debug */,
+				E885A9622BB9519400994666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E885A9632BB9519400994666 /* Build configuration list for PBXNativeTarget "mmSmokeSimulationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E885A9642BB9519400994666 /* Debug */,
+				E885A9652BB9519400994666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E885A9662BB9519400994666 /* Build configuration list for PBXNativeTarget "mmSmokeSimulationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E885A9672BB9519400994666 /* Debug */,
+				E885A9682BB9519400994666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E885A92F2BB9519300994666 /* Project object */;
+}
