@@ -5,8 +5,8 @@
 //  Created by 須之内俊樹 on 2024/03/31.
 //
 
-#include "Slab.h"
-
+#import "Slab.h"
+#import <iostream>
 @implementation Slab
 -(instancetype)initSlabWithSource:(id<MTLTexture>)source destTexture:(id<MTLTexture>)dest{
     _source = source;
@@ -14,9 +14,9 @@
     return self;
 }
 -(void)swap{
-    auto tmp = _source;
+    id<MTLTexture> tmp = _source;
     _source = _dest;
-    _dest = _source;
+    _dest = tmp;
 }
 - (id<MTLTexture>)makeSurfaceWithView:(nonnull MTKView*)mtkView :(int)width :(int)height :(int)numberOfComponent {
     id<MTLDevice> _device = mtkView.device;

@@ -1,8 +1,9 @@
 #import "Renderer.h"
 #import <Eigen/Core>
 #import <iostream>
+#import "DebugCommand.h"
 
-typedef struct RenderArea{
+struct RenderArea{
     int size = 500;
     Eigen::Vector2f leftdown = {-size,-size};
     Eigen::Vector2f leftup = {-size,size};
@@ -25,6 +26,8 @@ typedef struct RenderArea{
     Slab *testSlab;
     MTLSize _threadgroupSize;
     MTLSize _threadgroupCount;
+    testCommand *_testCommand;
+    ShaderBase *_shaderBase;
 }
 
 - (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView
@@ -40,13 +43,7 @@ typedef struct RenderArea{
 
         // Load all the shader files with a .metal file extension in the project.
         id<MTLLibrary> defaultLibrary = [_device newDefaultLibrary];
-        // Load the image processing function from the library and create a pipeline from it.
-        id<MTLFunction> kernelFunction = [defaultLibrary newFunctionWithName:@"simasima"];
-        _computePipelineState = [_device newComputePipelineStateWithFunction:kernelFunction
-                                                                       error:&error];
         
-        NSAssert(_computePipelineState, @"Failed to create compute pipeline state: %@", error);
-
         // pipeline.
         id<MTLFunction> vertexFunction = [defaultLibrary newFunctionWithName:@"vertexShader"];
         id<MTLFunction> fragmentFunction = [defaultLibrary newFunctionWithName:@"samplingShader"];
@@ -62,31 +59,27 @@ typedef struct RenderArea{
 
         NSAssert(_renderPipelineState, @"Failed to create render pipeline state: %@", error);
 
-        MTLTextureDescriptor *textureDescriptor = [[MTLTextureDescriptor alloc] init];
-        textureDescriptor.textureType = MTLTextureType2D;
+//        MTLTextureDescriptor *textureDescriptor = [[MTLTextureDescriptor alloc] init];
+//        textureDescriptor.textureType = MTLTextureType2D;
 //        textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
-        textureDescriptor.pixelFormat = MTLPixelFormatRGBA32Float;
+//        textureDescriptor.pixelFormat = MTLPixelFormatRGBA32Float;
 
-        textureDescriptor.width = 256;
-        textureDescriptor.height = 256;
+//        textureDescriptor.width = 256;
+//        textureDescriptor.height = 256;
         
-        textureDescriptor.usage = MTLTextureUsageShaderWrite | MTLTextureUsageShaderRead ;
-        _outputTexture = [_device newTextureWithDescriptor:textureDescriptor];
-
-
-        // Set the compute kernel's threadgroup size to 16 x 16.
-        _threadgroupSize = MTLSizeMake(16, 16, 1);
-
-        // Calculate the number of rows and columns of threadgroups given the size of the
-        // input image. Ensure that the grid covers the entire image (or more).
-        _threadgroupCount.width  = (_outputTexture.width  + _threadgroupSize.width -  1) / _threadgroupSize.width;
-        _threadgroupCount.height = (_outputTexture.height + _threadgroupSize.height - 1) / _threadgroupSize.height;
+//        textureDescriptor.usage = MTLTextureUsageShaderWrite | MTLTextureUsageShaderRead ;
+//        _outputTexture = [_device newTextureWithDescriptor:textureDescriptor];
+        
+//        _threadgroupSize = MTLSizeMake(16, 16, 1);
+//        _threadgroupCount.width  = (_outputTexture.width  + _threadgroupSize.width -  1) / _threadgroupSize.width;
+//        _threadgroupCount.height = (_outputTexture.height + _threadgroupSize.height - 1) / _threadgroupSize.height;
         // The image data is 2D, so set depth to 1.
-        _threadgroupCount.depth = 1;
+//        _threadgroupCount.depth = 1;
 
         // Create the command queue.
         _commandQueue = [_device newCommandQueue];
         testSlab = [[Slab alloc] makeSlabWithView:mtkView :256 :256 :1];
+        _testCommand = [[testCommand alloc] initWithDevice:_device functionName:@"simasima"];
         
     }
     return self;
@@ -106,14 +99,6 @@ typedef struct RenderArea{
     static const Vertex quadVertices[] =
     {
         // Pixel positions, Texture coordinates
-//        { {  250,  -250 },  { 1.f, 1.f } },
-//        { { -250,  -250 },  { 0.f, 1.f } },
-//        { { -250,   250 },  { 0.f, 0.f } },
-//
-//        { {  250,  -250 },  { 1.f, 1.f } },
-//        { { -250,   250 },  { 0.f, 0.f } },
-//        { {  250,   250 },  { 1.f, 0.f } },
-        
         { {  renderArea.rightdown.x(), renderArea.rightdown.y()  },  { 1.f, 1.f } },
         { {  renderArea.leftdown.x(), renderArea.leftdown.y()},  { 0.f, 1.f } },
         { {  renderArea.leftup.x(),   renderArea.leftup.y() },  { 0.f, 0.f } },
@@ -125,29 +110,12 @@ typedef struct RenderArea{
 
     // Create a new command buffer for each frame.
     id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
-    commandBuffer.label = @"MyCommand";
-
-    // Process the input image.
-    id<MTLComputeCommandEncoder> computeEncoder = [commandBuffer computeCommandEncoder];
-
     
-    [computeEncoder setComputePipelineState:_computePipelineState];
-
-//    [computeEncoder setTexture:_outputTexture
-//                       atIndex:0];
-//    std::cout << testSlab.source.width << "," << testSlab.source.height << std::endl;
-    [computeEncoder setTexture:testSlab.dest
-                       atIndex:0];
-    
-    [computeEncoder dispatchThreadgroups:_threadgroupCount
-                   threadsPerThreadgroup:_threadgroupSize];
-
-    [computeEncoder endEncoding];
+    [_testCommand encodeWithCommandBuffer:commandBuffer outTexture:testSlab.dest];
 
     [testSlab swap];
     // Use the output image to draw to the view's drawable texture.
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
-
     if(renderPassDescriptor != nil)
     {
         // Create the encoder for the render pass.

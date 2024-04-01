@@ -11,11 +11,11 @@
 #import "ShaderTypes.h"
 #import <simd/simd.h>
 #import "Slab.h"
-
+#import "testCommand.h"
+#import "ShaderBase.h"
 @interface Renderer : NSObject<MTKViewDelegate>
 
 - (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView;
-
 @end
 
 @interface Simulator : Renderer

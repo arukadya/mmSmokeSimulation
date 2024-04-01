@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E864181E2BBA4B330091C1EB /* Simulator.mm in Sources */ = {isa = PBXBuildFile; fileRef = E864181D2BBA4B330091C1EB /* Simulator.mm */; };
+		E86418242BBA4C1B0091C1EB /* ShaderBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = E86418232BBA4C1B0091C1EB /* ShaderBase.mm */; };
+		E86418272BBA4E940091C1EB /* AddForce.mm in Sources */ = {isa = PBXBuildFile; fileRef = E86418262BBA4E940091C1EB /* AddForce.mm */; };
+		E864182F2BBA61900091C1EB /* testCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = E864182E2BBA61900091C1EB /* testCommand.mm */; };
+		E86418322BBA6C120091C1EB /* DispatchConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = E86418312BBA6C120091C1EB /* DispatchConfig.mm */; };
+		E8826B602BBA92F50038577B /* DebugCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8826B5F2BBA92F50038577B /* DebugCommand.mm */; };
 		E885A93C2BB9519300994666 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A93B2BB9519300994666 /* AppDelegate.m */; };
 		E885A93F2BB9519300994666 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A93E2BB9519300994666 /* ViewController.m */; };
 		E885A9412BB9519400994666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E885A9402BB9519400994666 /* Assets.xcassets */; };
@@ -41,6 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E864181C2BBA4B220091C1EB /* Simulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Simulator.h; sourceTree = "<group>"; };
+		E864181D2BBA4B330091C1EB /* Simulator.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Simulator.mm; sourceTree = "<group>"; };
+		E86418222BBA4C110091C1EB /* ShaderBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderBase.h; sourceTree = "<group>"; };
+		E86418232BBA4C1B0091C1EB /* ShaderBase.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ShaderBase.mm; sourceTree = "<group>"; };
+		E86418252BBA4D220091C1EB /* Memo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Memo.md; sourceTree = "<group>"; };
+		E86418262BBA4E940091C1EB /* AddForce.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AddForce.mm; sourceTree = "<group>"; };
+		E86418282BBA4EAA0091C1EB /* AddForce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddForce.h; sourceTree = "<group>"; };
+		E864182D2BBA612A0091C1EB /* testCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testCommand.h; sourceTree = "<group>"; };
+		E864182E2BBA61900091C1EB /* testCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = testCommand.mm; sourceTree = "<group>"; };
+		E86418302BBA6C040091C1EB /* DispatchConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchConfig.h; sourceTree = "<group>"; };
+		E86418312BBA6C120091C1EB /* DispatchConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DispatchConfig.mm; sourceTree = "<group>"; };
+		E8826B5E2BBA92DE0038577B /* DebugCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugCommand.h; sourceTree = "<group>"; };
+		E8826B5F2BBA92F50038577B /* DebugCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DebugCommand.mm; sourceTree = "<group>"; };
 		E885A9372BB9519300994666 /* mmSmokeSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmSmokeSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E885A93A2BB9519300994666 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E885A93B2BB9519300994666 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +114,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E864182C2BBA60E80091C1EB /* ShaderCommand */ = {
+			isa = PBXGroup;
+			children = (
+				E86418222BBA4C110091C1EB /* ShaderBase.h */,
+				E86418302BBA6C040091C1EB /* DispatchConfig.h */,
+				E864182D2BBA612A0091C1EB /* testCommand.h */,
+				E864182E2BBA61900091C1EB /* testCommand.mm */,
+				E86418312BBA6C120091C1EB /* DispatchConfig.mm */,
+				E86418232BBA4C1B0091C1EB /* ShaderBase.mm */,
+				E86418262BBA4E940091C1EB /* AddForce.mm */,
+				E86418282BBA4EAA0091C1EB /* AddForce.h */,
+			);
+			path = ShaderCommand;
+			sourceTree = "<group>";
+		};
 		E885A92E2BB9519300994666 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +156,7 @@
 				E8F2C8872BB95F2D0017B449 /* Application */,
 				E8F2C8892BB95F960017B449 /* BackEnd */,
 				E8F2C88A2BB961310017B449 /* Article-Simulator.md */,
+				E86418252BBA4D220091C1EB /* Memo.md */,
 			);
 			path = mmSmokeSimulation;
 			sourceTree = "<group>";
@@ -180,11 +215,16 @@
 		E8F2C8892BB95F960017B449 /* BackEnd */ = {
 			isa = PBXGroup;
 			children = (
+				E8826B5E2BBA92DE0038577B /* DebugCommand.h */,
+				E8826B5F2BBA92F50038577B /* DebugCommand.mm */,
 				E8F2C8882BB95F5D0017B449 /* Shader */,
 				E885A9722BB9558D00994666 /* Renderer.h */,
 				E885A9702BB9557B00994666 /* Renderer.mm */,
 				E8F2C88B2BB969E20017B449 /* Slab.h */,
 				E8F2C88C2BB969F30017B449 /* Slab.mm */,
+				E864181C2BBA4B220091C1EB /* Simulator.h */,
+				E864181D2BBA4B330091C1EB /* Simulator.mm */,
+				E864182C2BBA60E80091C1EB /* ShaderCommand */,
 			);
 			path = BackEnd;
 			sourceTree = "<group>";
@@ -319,11 +359,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E885A9712BB9557B00994666 /* Renderer.mm in Sources */,
+				E864182F2BBA61900091C1EB /* testCommand.mm in Sources */,
+				E86418242BBA4C1B0091C1EB /* ShaderBase.mm in Sources */,
 				E8F2C88D2BB969F30017B449 /* Slab.mm in Sources */,
 				E885A93F2BB9519300994666 /* ViewController.m in Sources */,
 				E885A9462BB9519400994666 /* main.m in Sources */,
 				E885A93C2BB9519300994666 /* AppDelegate.m in Sources */,
+				E86418322BBA6C120091C1EB /* DispatchConfig.mm in Sources */,
+				E86418272BBA4E940091C1EB /* AddForce.mm in Sources */,
 				E885A9752BB9567400994666 /* Shaders.metal in Sources */,
+				E864181E2BBA4B330091C1EB /* Simulator.mm in Sources */,
+				E8826B602BBA92F50038577B /* DebugCommand.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

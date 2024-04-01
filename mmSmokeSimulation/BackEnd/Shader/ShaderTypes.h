@@ -1,7 +1,7 @@
 #ifndef ShaderTypes_h
 #define ShaderTypes_h
 
-#include <simd/simd.h>
+#import <simd/simd.h>
 
 typedef enum VertexInputIndex
 {
