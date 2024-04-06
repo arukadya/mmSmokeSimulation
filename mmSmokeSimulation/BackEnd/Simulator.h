@@ -9,4 +9,9 @@
 #define Simulator_h
 
 #import "AddForce.h"
+
+@interface Simulator : NSObject
+-(nonnull instancetype)initWithView:(nonnull MTKView *)mtkView width:(int)width height:(int)height;
+
+@end
 #endif /* Simulator_h */

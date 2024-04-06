@@ -18,12 +18,10 @@
     id<MTLFunction> kernelFunction = [defaultLibrary newFunctionWithName:_functionName];
     _pipelineState = [_device newComputePipelineStateWithFunction:kernelFunction error:&error];
     NSAssert(_pipelineState, @"Failed to create compute pipeline state: %@", error);
-    
-    
-    
     return self;
 }
-
+@synthesize _functionName;
+@synthesize _pipelineState;
 @end
 
 

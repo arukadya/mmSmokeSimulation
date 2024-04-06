@@ -18,8 +18,8 @@
     _source = _dest;
     _dest = tmp;
 }
-- (id<MTLTexture>)makeSurfaceWithView:(nonnull MTKView*)mtkView :(int)width :(int)height :(int)numberOfComponent {
-    id<MTLDevice> _device = mtkView.device;
+- (id<MTLTexture>)makeSurfaceWithDevice:(nonnull id<MTLDevice>)_device :(int)width :(int)height :(int)numberOfComponent {
+//    id<MTLDevice> _device = mtkView.device;
     MTLPixelFormat pixelFormat;
     if(numberOfComponent == 1)pixelFormat = MTLPixelFormatR32Float;
     if(numberOfComponent == 2)pixelFormat = MTLPixelFormatRG32Float;
@@ -37,9 +37,9 @@
     textureDescriptor.usage = MTLTextureUsageShaderWrite | MTLTextureUsageShaderRead ;
     return [_device newTextureWithDescriptor:textureDescriptor];
 }
-- (nonnull Slab *)makeSlabWithView:(nonnull MTKView*)mtkView :(int)width :(int)height :(int)numberOfComponent{
-    id<MTLTexture>src = [self makeSurfaceWithView:mtkView :width :height :numberOfComponent];
-    id<MTLTexture>dst = [self makeSurfaceWithView:mtkView :width :height :numberOfComponent];
+- (nonnull Slab *)makeSlabWithDevice:(nonnull id<MTLDevice>)_device :(int)width :(int)height :(int)numberOfComponent{
+    id<MTLTexture>src = [self makeSurfaceWithDevice:_device :width :height :numberOfComponent];
+    id<MTLTexture>dst = [self makeSurfaceWithDevice:_device :width :height :numberOfComponent];
     return [self initSlabWithSource:src destTexture:dst];
 }
 @end

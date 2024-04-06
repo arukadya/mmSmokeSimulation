@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		E864181E2BBA4B330091C1EB /* Simulator.mm in Sources */ = {isa = PBXBuildFile; fileRef = E864181D2BBA4B330091C1EB /* Simulator.mm */; };
 		E86418242BBA4C1B0091C1EB /* ShaderBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = E86418232BBA4C1B0091C1EB /* ShaderBase.mm */; };
-		E86418272BBA4E940091C1EB /* AddForce.mm in Sources */ = {isa = PBXBuildFile; fileRef = E86418262BBA4E940091C1EB /* AddForce.mm */; };
-		E864182F2BBA61900091C1EB /* testCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = E864182E2BBA61900091C1EB /* testCommand.mm */; };
+		E86418272BBA4E940091C1EB /* AddForce.m in Sources */ = {isa = PBXBuildFile; fileRef = E86418262BBA4E940091C1EB /* AddForce.m */; };
+		E864182F2BBA61900091C1EB /* testCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E864182E2BBA61900091C1EB /* testCommand.m */; };
 		E86418322BBA6C120091C1EB /* DispatchConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = E86418312BBA6C120091C1EB /* DispatchConfig.mm */; };
 		E8826B602BBA92F50038577B /* DebugCommand.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8826B5F2BBA92F50038577B /* DebugCommand.mm */; };
+		E8826B632BBEABE50038577B /* Fluid.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8826B622BBEABE50038577B /* Fluid.mm */; };
+		E8826B652BC065E10038577B /* InitializeTexture.metal in Sources */ = {isa = PBXBuildFile; fileRef = E8826B642BC065E00038577B /* InitializeTexture.metal */; };
+		E8826B672BC131920038577B /* TextureInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8826B662BC131920038577B /* TextureInitializer.m */; };
 		E885A93C2BB9519300994666 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A93B2BB9519300994666 /* AppDelegate.m */; };
 		E885A93F2BB9519300994666 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E885A93E2BB9519300994666 /* ViewController.m */; };
 		E885A9412BB9519400994666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E885A9402BB9519400994666 /* Assets.xcassets */; };
@@ -52,14 +55,19 @@
 		E86418222BBA4C110091C1EB /* ShaderBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderBase.h; sourceTree = "<group>"; };
 		E86418232BBA4C1B0091C1EB /* ShaderBase.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ShaderBase.mm; sourceTree = "<group>"; };
 		E86418252BBA4D220091C1EB /* Memo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Memo.md; sourceTree = "<group>"; };
-		E86418262BBA4E940091C1EB /* AddForce.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AddForce.mm; sourceTree = "<group>"; };
+		E86418262BBA4E940091C1EB /* AddForce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddForce.m; sourceTree = "<group>"; };
 		E86418282BBA4EAA0091C1EB /* AddForce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddForce.h; sourceTree = "<group>"; };
 		E864182D2BBA612A0091C1EB /* testCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testCommand.h; sourceTree = "<group>"; };
-		E864182E2BBA61900091C1EB /* testCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = testCommand.mm; sourceTree = "<group>"; };
+		E864182E2BBA61900091C1EB /* testCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testCommand.m; sourceTree = "<group>"; };
 		E86418302BBA6C040091C1EB /* DispatchConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchConfig.h; sourceTree = "<group>"; };
 		E86418312BBA6C120091C1EB /* DispatchConfig.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DispatchConfig.mm; sourceTree = "<group>"; };
 		E8826B5E2BBA92DE0038577B /* DebugCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugCommand.h; sourceTree = "<group>"; };
 		E8826B5F2BBA92F50038577B /* DebugCommand.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DebugCommand.mm; sourceTree = "<group>"; };
+		E8826B612BBEABDC0038577B /* Fluid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fluid.h; sourceTree = "<group>"; };
+		E8826B622BBEABE50038577B /* Fluid.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Fluid.mm; sourceTree = "<group>"; };
+		E8826B642BC065E00038577B /* InitializeTexture.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = InitializeTexture.metal; sourceTree = "<group>"; };
+		E8826B662BC131920038577B /* TextureInitializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextureInitializer.m; sourceTree = "<group>"; };
+		E8826B682BC1319D0038577B /* TextureInitializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextureInitializer.h; sourceTree = "<group>"; };
 		E885A9372BB9519300994666 /* mmSmokeSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmSmokeSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E885A93A2BB9519300994666 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E885A93B2BB9519300994666 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,13 +126,15 @@
 			isa = PBXGroup;
 			children = (
 				E86418222BBA4C110091C1EB /* ShaderBase.h */,
-				E86418302BBA6C040091C1EB /* DispatchConfig.h */,
-				E864182D2BBA612A0091C1EB /* testCommand.h */,
-				E864182E2BBA61900091C1EB /* testCommand.mm */,
-				E86418312BBA6C120091C1EB /* DispatchConfig.mm */,
 				E86418232BBA4C1B0091C1EB /* ShaderBase.mm */,
-				E86418262BBA4E940091C1EB /* AddForce.mm */,
+				E86418302BBA6C040091C1EB /* DispatchConfig.h */,
+				E86418312BBA6C120091C1EB /* DispatchConfig.mm */,
+				E864182D2BBA612A0091C1EB /* testCommand.h */,
+				E864182E2BBA61900091C1EB /* testCommand.m */,
 				E86418282BBA4EAA0091C1EB /* AddForce.h */,
+				E86418262BBA4E940091C1EB /* AddForce.m */,
+				E8826B662BC131920038577B /* TextureInitializer.m */,
+				E8826B682BC1319D0038577B /* TextureInitializer.h */,
 			);
 			path = ShaderCommand;
 			sourceTree = "<group>";
@@ -208,6 +218,7 @@
 			children = (
 				E885A9732BB9560800994666 /* ShaderTypes.h */,
 				E885A9742BB9567400994666 /* Shaders.metal */,
+				E8826B642BC065E00038577B /* InitializeTexture.metal */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
@@ -220,6 +231,8 @@
 				E8F2C8882BB95F5D0017B449 /* Shader */,
 				E885A9722BB9558D00994666 /* Renderer.h */,
 				E885A9702BB9557B00994666 /* Renderer.mm */,
+				E8826B612BBEABDC0038577B /* Fluid.h */,
+				E8826B622BBEABE50038577B /* Fluid.mm */,
 				E8F2C88B2BB969E20017B449 /* Slab.h */,
 				E8F2C88C2BB969F30017B449 /* Slab.mm */,
 				E864181C2BBA4B220091C1EB /* Simulator.h */,
@@ -359,17 +372,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E885A9712BB9557B00994666 /* Renderer.mm in Sources */,
-				E864182F2BBA61900091C1EB /* testCommand.mm in Sources */,
+				E864182F2BBA61900091C1EB /* testCommand.m in Sources */,
 				E86418242BBA4C1B0091C1EB /* ShaderBase.mm in Sources */,
+				E8826B632BBEABE50038577B /* Fluid.mm in Sources */,
 				E8F2C88D2BB969F30017B449 /* Slab.mm in Sources */,
 				E885A93F2BB9519300994666 /* ViewController.m in Sources */,
 				E885A9462BB9519400994666 /* main.m in Sources */,
 				E885A93C2BB9519300994666 /* AppDelegate.m in Sources */,
 				E86418322BBA6C120091C1EB /* DispatchConfig.mm in Sources */,
-				E86418272BBA4E940091C1EB /* AddForce.mm in Sources */,
+				E86418272BBA4E940091C1EB /* AddForce.m in Sources */,
 				E885A9752BB9567400994666 /* Shaders.metal in Sources */,
 				E864181E2BBA4B330091C1EB /* Simulator.mm in Sources */,
 				E8826B602BBA92F50038577B /* DebugCommand.mm in Sources */,
+				E8826B672BC131920038577B /* TextureInitializer.m in Sources */,
+				E8826B652BC065E10038577B /* InitializeTexture.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

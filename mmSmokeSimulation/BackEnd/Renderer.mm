@@ -23,11 +23,12 @@ struct RenderArea{
     id<MTLCommandQueue> _commandQueue;
     vector_uint2 _viewportSize;
     id<MTLTexture> _outputTexture;
-    Slab *testSlab;
+//    Slab *testSlab;
     MTLSize _threadgroupSize;
     MTLSize _threadgroupCount;
-    testCommand *_testCommand;
-    ShaderBase *_shaderBase;
+//    testCommand *_testCommand;
+    Fluid *_fluid;
+    
 }
 
 - (nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)mtkView
@@ -56,31 +57,14 @@ struct RenderArea{
 
         _renderPipelineState = [_device newRenderPipelineStateWithDescriptor:pipelineStateDescriptor
                                                                  error:&error];
-
         NSAssert(_renderPipelineState, @"Failed to create render pipeline state: %@", error);
-
-//        MTLTextureDescriptor *textureDescriptor = [[MTLTextureDescriptor alloc] init];
-//        textureDescriptor.textureType = MTLTextureType2D;
-//        textureDescriptor.pixelFormat = MTLPixelFormatBGRA8Unorm;
-//        textureDescriptor.pixelFormat = MTLPixelFormatRGBA32Float;
-
-//        textureDescriptor.width = 256;
-//        textureDescriptor.height = 256;
-        
-//        textureDescriptor.usage = MTLTextureUsageShaderWrite | MTLTextureUsageShaderRead ;
-//        _outputTexture = [_device newTextureWithDescriptor:textureDescriptor];
-        
-//        _threadgroupSize = MTLSizeMake(16, 16, 1);
-//        _threadgroupCount.width  = (_outputTexture.width  + _threadgroupSize.width -  1) / _threadgroupSize.width;
-//        _threadgroupCount.height = (_outputTexture.height + _threadgroupSize.height - 1) / _threadgroupSize.height;
-        // The image data is 2D, so set depth to 1.
-//        _threadgroupCount.depth = 1;
 
         // Create the command queue.
         _commandQueue = [_device newCommandQueue];
-        testSlab = [[Slab alloc] makeSlabWithView:mtkView :256 :256 :1];
-        _testCommand = [[testCommand alloc] initWithDevice:_device functionName:@"simasima"];
-        
+//        testSlab = [[Slab alloc] makeSlabWithDevice:_device :256 :256 :1];
+//        _testCommand = [[testCommand alloc] initWithDevice:_device functionName:@"simasima"];
+        id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
+        _fluid = [[Fluid alloc] initWithDevice:_device commnandBuffer:commandBuffer width:256 height:256];
     }
     return self;
 }
@@ -110,10 +94,10 @@ struct RenderArea{
 
     // Create a new command buffer for each frame.
     id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
-    
-    [_testCommand encodeWithCommandBuffer:commandBuffer outTexture:testSlab.dest];
+    [_fluid encodeWithCommandBuffer:commandBuffer];
+//    [_testCommand encodeWithCommandBuffer:commandBuffer outTexture:testSlab.dest];
 
-    [testSlab swap];
+//    [testSlab swap];
     // Use the output image to draw to the view's drawable texture.
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
     if(renderPassDescriptor != nil)
@@ -141,7 +125,7 @@ struct RenderArea{
         // Encode the output texture from the previous stage.
 //        [renderEncoder setFragmentTexture:_outputTexture
 //                                  atIndex:TextureIndexOutput];
-        [renderEncoder setFragmentTexture:testSlab.dest atIndex:TextureIndexOutput];
+        [renderEncoder setFragmentTexture:_fluid._currentTexture atIndex:TextureIndexOutput];
 
         // Draw the quad.
         [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle

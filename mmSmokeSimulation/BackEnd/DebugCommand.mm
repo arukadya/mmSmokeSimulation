@@ -13,7 +13,7 @@
 @implementation DebugCommand
 
 + (void)printTexture:(nonnull id<MTLTexture>)source textureName:(const char*)textureName{
-    std::cout << textureName << "," << source.width << "," << source.width << std::endl;
+    std::cout << textureName << "," << source.width << "," << source.height << std::endl;
 }
 
 @end

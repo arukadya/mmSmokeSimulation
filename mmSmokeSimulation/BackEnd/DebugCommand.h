@@ -11,7 +11,6 @@
 #import <MetalKit/MetalKit.h>
 #import "ShaderTypes.h"
 #import <simd/simd.h>
-#include <string>
 @interface DebugCommand:NSObject{
 }
 +(void)printTexture:(nonnull id<MTLTexture>)source textureName:(const char*)textureName;

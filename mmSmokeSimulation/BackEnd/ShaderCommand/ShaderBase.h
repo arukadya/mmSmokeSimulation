@@ -9,11 +9,11 @@
 #define ShaderBase_h
 #import <MetalKit/MetalKit.h>
 #import <Metal/Metal.h>
-
+#import "DispatchConfig.h"
 @interface ShaderBase : NSObject
 -(nonnull instancetype)initWithDevice:(nonnull id<MTLDevice>)_device functionName:(nonnull NSString*)functionName;
-@property (nonnull)NSString* functionName;
-@property (nonnull)id<MTLComputePipelineState> pipelineState;
+@property (nonnull)NSString* _functionName;
+@property (nonnull)id<MTLComputePipelineState> _pipelineState;
 @end
 
 

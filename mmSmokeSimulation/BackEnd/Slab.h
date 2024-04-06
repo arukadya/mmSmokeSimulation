@@ -14,9 +14,9 @@
 
 - (void)swap;
 
--(nonnull instancetype)makeSurfaceWithView:(nonnull MTKView*)mtkView :(int)width :(int)height :(int)numberOfComponent;
+-(nonnull instancetype)makeSurfaceWithDevice:(nonnull id<MTLDevice>)_device :(int)width :(int)height :(int)numberOfComponent;
 
--(nonnull instancetype)makeSlabWithView:(nonnull MTKView*)mtkView :(int)width :(int)height :(int)numberOfComponent;
+-(nonnull instancetype)makeSlabWithDevice:(nonnull id<MTLDevice>)_device :(int)width :(int)height :(int)numberOfComponent;
 
 @property (nonnull)id<MTLTexture>source;
 @property (nonnull)id<MTLTexture>dest;
