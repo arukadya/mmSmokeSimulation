@@ -13,6 +13,7 @@
 -(nonnull instancetype)initWithDevice:(nonnull id<MTLDevice>)_device functionName:(nonnull NSString *)functionName value:(float)value;
 
 -(void)encodeWithCommandBuffer:(nonnull id<MTLCommandBuffer>)_buffer outTexture:(nonnull id<MTLTexture>)outTexture;
+@property float _value;
 @end
 
 #endif /* TextureInitializer_h */

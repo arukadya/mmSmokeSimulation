@@ -7,7 +7,7 @@
 #import "DispatchConfig.h"
 @implementation DispatchConfig
 
-- (instancetype)initWithSize:(int)width height:(int)height {
+- (instancetype)initWithSize:(NSInteger)width height:(NSInteger)height {
     _width = width;
     _height = height;
     _threadsPerThreadgroup = MTLSizeMake(16, 16, 1);
@@ -20,16 +20,3 @@
     return MTLSizeMake(threadWidth, threadHeight, 1);
 }
 @end
-//@implementation DispatchConfig
-//
-//+(MTLSize)threadsPerThreadgroup{
-//    return MTLSizeMake(16, 16, 1);
-//}
-//
-//+(MTLSize)threadgroupCount:(int)width height:(int)height{
-//    int threadWidth = int(ceilf(float(width) / float(self.threadsPerThreadgroup.width)));
-//    int threadHeight = int(ceilf(float(height) / float(self.threadsPerThreadgroup.height)));
-//    return MTLSizeMake(threadWidth, threadHeight, 1);
-//}
-//
-//@end

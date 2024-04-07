@@ -12,15 +12,11 @@
 
 @interface DispatchConfig : NSObject
 
--(nonnull instancetype)initWithSize:(int)width height:(int)height;
+-(instancetype)initWithSize:(NSInteger)width height:(NSInteger)height;
 -(MTLSize)threadgroupCount;
-@property int width;
-@property int height;
+@property NSInteger width;
+@property NSInteger height;
 @property MTLSize threadsPerThreadgroup;
 
 @end
-//@interface DispatchConfig : NSObject
-//+(MTLSize)threadsPerThreadgroup;
-//+(MTLSize)threadgroupCount:(int)width height:(int)height;
-//@end
 #endif /* DispatchConfig_h */

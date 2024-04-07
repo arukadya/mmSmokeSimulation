@@ -22,8 +22,8 @@
 //    id<MTLDevice> _device = mtkView.device;
     MTLPixelFormat pixelFormat;
     if(numberOfComponent == 1)pixelFormat = MTLPixelFormatR32Float;
-    if(numberOfComponent == 2)pixelFormat = MTLPixelFormatRG32Float;
-    if(numberOfComponent == 3 || numberOfComponent == 4)pixelFormat = MTLPixelFormatRGBA32Float;
+    else if(numberOfComponent == 2)pixelFormat = MTLPixelFormatRG32Float;
+    else if(numberOfComponent == 3 || numberOfComponent == 4)pixelFormat = MTLPixelFormatRGBA32Float;
     else pixelFormat = MTLPixelFormatR32Float;
 //    NSAssert(numberOfComponent > 4, @"numberOfComponent must be less than or equal to 4");
     

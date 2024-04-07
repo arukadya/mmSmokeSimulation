@@ -95,9 +95,7 @@ struct RenderArea{
     // Create a new command buffer for each frame.
     id<MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
     [_fluid encodeWithCommandBuffer:commandBuffer];
-//    [_testCommand encodeWithCommandBuffer:commandBuffer outTexture:testSlab.dest];
-
-//    [testSlab swap];
+    
     // Use the output image to draw to the view's drawable texture.
     MTLRenderPassDescriptor *renderPassDescriptor = view.currentRenderPassDescriptor;
     if(renderPassDescriptor != nil)

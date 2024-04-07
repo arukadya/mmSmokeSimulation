@@ -6,12 +6,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AddForce.h"
+#import "ShaderCommand.h"
 
-@implementation AddForce
-- (nonnull instancetype)initWithDevice:(nonnull id<MTLDevice>)_device functionName:(nonnull NSString *)functionName timeStep:(float)timeStep {
-    self = [super initWithDevice:_device functionName:functionName];
-    _timeStep = timeStep;
+@implementation Advect{
+    float *_timeStep;
+}
+- (nonnull instancetype)initWithDevice:(nonnull id<MTLDevice>)_device  timeStep:(float)timeStep {
+    [self set_functionName:@"xAdvect"];
+    self = [super initWithDevice:_device functionName:self._functionName];
+    _timeStep = &timeStep;
     return self;
 }
 
@@ -22,6 +25,7 @@
                        atIndex:0];
     [computeEncoder setTexture:outTexture
                        atIndex:1];
+    [computeEncoder setBytes:_timeStep length:sizeof(float) atIndex:0];
     DispatchConfig *config;
     config = [[DispatchConfig alloc] initWithSize:outTexture.width height:outTexture.height];
     [computeEncoder dispatchThreadgroups:config.threadgroupCount

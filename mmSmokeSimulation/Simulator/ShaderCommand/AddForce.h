@@ -12,7 +12,9 @@
 @interface AddForce : ShaderBase
 -(nonnull instancetype)initWithDevice:(nonnull id<MTLDevice>)_device functionName:(nonnull NSString *)functionName timeStep:(float)timeStep;
 
--(void)encodeWithCommandBuffer:(nonnull id<MTLCommandBuffer>)_buffer inTexture:(nonnull id<MTLTexture>)inTexture outTexture:(nonnull id<MTLTexture>)outTexture;
-@property float timeStep;
+-(void)encodeWithCommandBuffer:(nonnull id<MTLCommandBuffer>)_buffer
+             inVelocityTexture:(nonnull id<MTLTexture>)inVelocityTexture
+            outVelocityTexture:(nonnull id<MTLTexture>)outVelocityTexture
+                   forceTexture:(nonnull id<MTLTexture>)forceTexture;
 @end
 #endif /* AddForce_h */
